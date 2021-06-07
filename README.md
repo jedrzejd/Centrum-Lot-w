@@ -20,6 +20,7 @@ Minimalny zakres funkcjonalności:
 
 ## Dokumentacja
 Sample text
+piekny mamy dzien 
 
 ## Uruchomianie
 Sample text
