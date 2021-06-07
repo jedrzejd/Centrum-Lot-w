@@ -1,17 +1,23 @@
 from lotnisko import Lotnisko
 
+
 class Trasa:
-    def __init__(self,dystans: float,czas: float, lotniska:list):
-        self.dystans = dystans
-        self.czas = czas
-        self.lotniska = lotniska
+    def __init__(self, dystans: float, czas: float, lotniska: list):
+        self.__dystans = dystans
+        self.__czas = czas
+        self.__lotniska = lotniska
+
     def getDystans(self):
-        return self.dystans
+        return self.__dystans
+
     def getLotniska(self):
-        return self.lotniska
-    def dodajLotnisko(self,lotnisko:Lotnisko):
-        self.__lotnisko.append(lotnisko)
+        return self.__lotniska
+
+    def dodajLotnisko(self, lotnisko: Lotnisko):
+        self.__lotniska.append(lotnisko)
+
     def usunLotnisko(self):
-        self.__lotnisko.pop()
+        self.__lotniska.pop()
+
     def getCzas(self):
-        return self.czas
+        return self.__czas
