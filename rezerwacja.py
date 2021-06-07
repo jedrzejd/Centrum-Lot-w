@@ -3,9 +3,9 @@ from bilet import Bilet
 
 
 class Rezerwacja:
-    def __init__(self, klient):
+    def __init__(self, klient, bilety):
         self.__klient = klient
-        self.__bilety = []
+        self.__bilety = bilety
 
     def getKlient(self):
         return self.__klient

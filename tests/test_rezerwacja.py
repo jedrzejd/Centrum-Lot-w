@@ -7,15 +7,17 @@ from posrednikFirmy import PosrednikFirmy
 
 
 def test_create_rezerwacja():
+    bilet = Bilet('Polska', 'USA', datetime(2021, 3, 3))
     klinet = Klient('jd_123')
-    rezerwacja = Rezerwacja(klinet)
+    rezerwacja = Rezerwacja(klinet, [bilet])
 
     assert isinstance(rezerwacja, Rezerwacja)
 
 
 def test_getKlient():
+    bilet = Bilet('Polska', 'USA', datetime(2021, 3, 3))
     klinet = Klient('jd_123')
-    rezerwacja = Rezerwacja(klinet)
+    rezerwacja = Rezerwacja(klinet, [bilet])
 
     klient = rezerwacja.getKlient()
     id_klienta = klient.getId()
@@ -26,9 +28,9 @@ def test_getKlient():
 
 
 def test_getPosrednikFirmy():
-
+    bilet = Bilet('Polska', 'USA', datetime(2021, 3, 3))
     klinet_indywidualny = PosrednikFirmy('AZDVD12', 'Azabrasz', '123452518')
-    rezerwacja = Rezerwacja(klinet_indywidualny)
+    rezerwacja = Rezerwacja(klinet_indywidualny, [bilet])
 
     klient = rezerwacja.getKlient()
     id_klienta = klient.getId()
@@ -43,9 +45,9 @@ def test_getPosrednikFirmy():
 
 
 def test_getKlientIndywidualny():
-
+    bilet = Bilet('Polska', 'USA', datetime(2021, 3, 3))
     klinet_indywidualny = Indywidualny('jd_123', 'Jerzy', 'Pawian', 'Poznanian', 53)
-    rezerwacja = Rezerwacja(klinet_indywidualny)
+    rezerwacja = Rezerwacja(klinet_indywidualny, [bilet])
 
     klient = rezerwacja.getKlient()
     id_klienta = klient.getId()
@@ -65,7 +67,7 @@ def test_getKlientIndywidualny():
 
 def test_getBilety_and_dodajBilety():
     klinet = Klient('jd_123')
-    rezerwacja = Rezerwacja(klinet)
+    rezerwacja = Rezerwacja(klinet, [])
     bilet = Bilet('Polska', 'Rosja', datetime(2021, 1, 22))
 
     rezerwacja.dodajBilety(bilet)
@@ -80,8 +82,9 @@ def test_getBilety_and_dodajBilety():
 
 
 def test_getBilety_and_dodajBilety_and_usunBilet():
+    bilet = Bilet('Polska', 'USA', datetime(2021, 3, 3))
     klinet = Klient('jd_123')
-    rezerwacja = Rezerwacja(klinet)
+    rezerwacja = Rezerwacja(klinet, [bilet])
     bilet_0 = Bilet('Francja', 'Usa', datetime(2023, 2, 3))
     bilet_1 = Bilet('Polska', 'Rosja', datetime(2021, 1, 22))
     bilet_2 = Bilet('Baku', 'Wlochy', datetime(2022, 5, 11))
@@ -94,7 +97,7 @@ def test_getBilety_and_dodajBilety_and_usunBilet():
     bilety = rezerwacja.getBilety()
 
     assert isinstance(rezerwacja, Rezerwacja)
-    assert len(bilety) == 1
+    assert len(bilety) == 2
     assert isinstance(bilety[0], Bilet)
     assert bilety[-1].getMiejsceDocelowe() == 'Usa'
     assert bilety[-1].getMiejsceOdlotu() == 'Francja'
