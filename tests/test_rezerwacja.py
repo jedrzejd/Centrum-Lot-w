@@ -47,8 +47,8 @@ def test_getBilety_and_dodajBilety_and_usunBilet():
     rezerwacja.dodajBilety(bilet_1)
     rezerwacja.dodajBilety(bilet_2)
 
-    rezerwacja.usunBilet()
-    rezerwacja.usunBilet()
+    rezerwacja.usunBilet(bilet_1)
+    rezerwacja.usunBilet(bilet_2)
     bilety = rezerwacja.getBilety()
 
     assert isinstance(rezerwacja, Rezerwacja)

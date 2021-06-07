@@ -16,5 +16,5 @@ class Rezerwacja:
     def dodajBilety(self, bilet: Bilet):
         self.__bilety.append(bilet)
 
-    def usunBilet(self):
-        self.__bilety.pop()
+    def usunBilet(self, bilet: Bilet):
+        self.__bilety.remove(bilet)
