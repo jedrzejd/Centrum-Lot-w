@@ -3,7 +3,7 @@ from bilet import Bilet
 
 
 class Rezerwacja:
-    def __init__(self, klient: Klient):
+    def __init__(self, klient):
         self.__klient = klient
         self.__bilety = []
 
