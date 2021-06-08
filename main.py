@@ -1,9 +1,14 @@
 import os #czyszczenie ekranu w pythonie
+from lotnisko import Lotnisko
+from linialotnicza import Linialotnicza
+
+
 #tu bedzie trzeba importowac wszysko
+linialotnicza = Linialotnicza('', [], [], [], [])
+linialotnicza.odczyt()
 
 wejscie=1
 przejscie=1
-
 while(wejscie!=0):
     if(przejscie==1):
         print("""Witaj w SYSTEMIE REZERWACJI BILETÓW!!
@@ -12,7 +17,6 @@ Razem z naszą aplikacją pomożemy Ci załatwić wszystkie obowiązki związane
     #w sumie mozna ale nie wiem co z tymi trasami moznaby było zrobic
     # a i cos z zapisywaniem danych na dysk trzeba zrobic(i odczytywanie w sumie tez)
     #i jak czyscic ekran konsoli w tym pythonie smierdzacym
-
     print("""1. Zarządzaj lotniskiem
 2. Zarządzaj samolotem
 3. Zarządzaj klientem
@@ -31,15 +35,29 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
     if(wybor=="1"):
         print("""1. Wyświetl liste lotnisk
 2. Wyświetl ilosc lotnisk w bazie
-3. Usuń wybrane lotnisko
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         lotniskowywybor=input()
         if(lotniskowywybor=="1"):
-            print("tu sie wypisze lista lotnisk")
+            trasy=linialotnicza.getTrasy()
+
+            licznik=0
+            for i in trasy:
+                a=i.getLotniska()
+                for lotnisko in a:
+                    licznik += 1
+                    print("Lotnisko numer ", licznik)
+                    print('Kraj:',lotnisko.getKraj())
+                    print('Miasto: ',lotnisko.getMiasto())
+                    print('ID: ',lotnisko.getId())
+                    print('\n')
+
         if(lotniskowywybor=="2"):
-            print("tu sie wypisze ilosc lotnisk")
-        if(lotniskowywybor=="3"):
-            print("tu sie usunie lotnisko")
+            licznik = 0
+            for i in trasy:
+                a = i.getLotniska()
+                licznik+=len(a)
+            print('Liczba lotnisk jest równa: ',licznik)
+
 
 
     if(wybor=="2"):
@@ -49,21 +67,26 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         samolotowywybor = input()
         if (samolotowywybor == "1"):
-            print("""1.Lista zajętych samolotów
-2.Lista wolnych samolotów
-3.Lista wszystkich samolotów
-Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
-            jakalista=input()
-            if(jakalista=="1"):
-                print("wypisuje liste zajetych samolotow")
-            if(jakalista=="2"):
-                print("wypisuje liste wolnych samolotow")
-            if(jakalista=="3"):
-                print("wypisuje liste wsyzstkich samolotow")
+            samoloty = linialotnicza.getSamoloty()
+            licznik = 0
+            for samolot in samoloty:
+                licznik += 1
+                print("Samolot numer ", licznik)
+                print('Zasieg samolotu:', samolot.getZasieg())
+                print('ID: ', samolot.getId())
+                print('Liczba miejsc: ', samolot.getLiczbamiejsc())
+                print('\n')
+            print()
         if (samolotowywybor == "2"):#mozna podzielić na ilosc zajetych/wolncyh/wszystkich samolotow
-            print("tu sie wypisze ilosc samolotow")
+            licznik = 0
+            samoloty = linialotnicza.getSamoloty()
+            for samolot in samoloty:
+                licznik += 1
+            print('Samolotow jest: ',licznik)
         if (samolotowywybor == "3"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
-            print("tu sie usunie samolot")
+
+            linialotnicza.usunSamolot()
+
 
     if(wybor=="3"):
         print("""1. Wyświetl listę osób
@@ -94,5 +117,5 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         if (cobilet == "3"):
             print("Usuwanie osoby:")
 
-    for i in range(10):
+    for i in range(2):
         print("\n")
