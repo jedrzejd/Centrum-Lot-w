@@ -9,7 +9,6 @@ def test_create_klient():
 
 def test_getID_klineta():
     klient = Klient('123')
-
     id_klient = klient.getId()
 
     assert id_klient == '123'
