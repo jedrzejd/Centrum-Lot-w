@@ -1,7 +1,7 @@
 import os #czyszczenie ekranu w pythonie
 from lotnisko import Lotnisko
 from linialotnicza import Linialotnicza
-
+from klient import Klient
 
 #tu bedzie trzeba importowac wszysko
 from samolot import Samolot
@@ -24,6 +24,7 @@ Razem z naszą aplikacją pomożemy Ci załatwić wszystkie obowiązki związane
 3. Zarządzaj klientem
 4. Zarządzaj trasami
 5. Zarządzaj biletem
+6. Operacja na pliku
 0. Zakończ program
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
     #w c da sie zrobic switch ale niew iemjak to jest w pythonie wiec zrobie na if-ach
@@ -61,12 +62,10 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
             print('Liczba lotnisk jest równa: ',licznik)
 
 
-
     if(wybor=="2"):
         print("""1. Wyświetl liste samolotów
 2. Wyświetl ilosc samolotów w bazie
 3. Dodaj samolot
-4. Usuń wybrany samolot
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         samolotowywybor = input()
         if (samolotowywybor == "1"):
@@ -80,7 +79,7 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
                 print('Liczba miejsc: ', samolot.getLiczbamiejsc())
                 print('\n')
             print()
-        if (samolotowywybor == "2"):#mozna podzielić na ilosc zajetych/wolncyh/wszystkich samolotow
+        if (samolotowywybor == "2"):
             licznik = 0
             samoloty = linialotnicza.getSamoloty()
             for samolot in samoloty:
@@ -93,25 +92,25 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
             liczbamiejsc = input('Podaj liczbę miejsc w samolocie: ')
             linialotnicza.dodajSamolot(Samolot(zasieg,id,liczbamiejsc))
 
-        if (samolotowywybor == "4"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
-            zasieg = input("Podaj zasieg samolotu")
-            id = input("Podaj id samolotu")
-            liczbamiejsc = input("Podaj liczbe miejsc samolotu")
-            linialotnicza.usunSamolot(Samolot(zasieg, id, liczbamiejsc))
 
 
     if(wybor=="3"):
         print("""1. Wyświetl listę osób
 2. Dodaj osobę
-3. Usuń osobę
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         coosoba=input()
         if(coosoba=="1"):
             print("Lista osob:")
+            osoby = linialotnicza.getKlienci()
+            licznik = 0
+            for osoba in osoby:
+                licznik += 1
+                print("Osoba numer ", licznik)
+                print('ID osoby: ', osoba.getId())
+
         if(coosoba=="2"):
-            print("Dodawanie osoby:")
-        if(coosoba=="3"):
-            print("Usuwanie osoby:")
+            idklienta=input('Podaj ID Klienta: ')
+            linialotnicza.dodajKlienta(Klient(idklienta))
 
     if(wybor=="4"):
         print("cos z trasami")
@@ -123,11 +122,22 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         cobilet = input()
         if (cobilet == "1"):
-            print("Listaosob:")
+            print("Listaosob: ")
         if (cobilet == "2"):
-            print("Dodawanie osoby:")
+            print("Dodawanie osoby: ")
         if (cobilet == "3"):
-            print("Usuwanie osoby:")
+            print("Usuwanie osoby: ")
+
+    if (wybor == "6"):
+        print("""1. Zapisz do pliku
+2. Odczytaj z pliku
+Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
+        plikwybor = input()
+        if (plikwybor == "1"):
+            linialotnicza.zapis()
+        if (plikwybor == "2"):
+            linialotnicza.odczyt()
+
 
     for i in range(2):
         print("\n")
