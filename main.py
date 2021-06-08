@@ -63,7 +63,8 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
     if(wybor=="2"):
         print("""1. Wyświetl liste samolotów
 2. Wyświetl ilosc samolotów w bazie
-3. Usuń wybrany samolot
+3. Dodaj samolot
+4. Usuń wybrany samolot
 Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
         samolotowywybor = input()
         if (samolotowywybor == "1"):
@@ -83,7 +84,11 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
             for samolot in samoloty:
                 licznik += 1
             print('Samolotow jest: ',licznik)
-        if (samolotowywybor == "3"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
+
+        if (samolotowywybor == "3"):
+            print('Podaj')
+            input()
+        if (samolotowywybor == "4"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
 
             linialotnicza.usunSamolot()
 
