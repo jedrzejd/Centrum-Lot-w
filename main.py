@@ -1,7 +1,9 @@
 import os #czyszczenie ekranu w pythonie
 #tu bedzie trzeba importowac wszysko
+
 wejscie=1
 przejscie=1
+
 while(wejscie!=0):
     if(przejscie==1):
         print("""Witaj w SYSTEMIE REZERWACJI BILETÓW!!
@@ -10,6 +12,7 @@ Razem z naszą aplikacją pomożemy Ci załatwić wszystkie obowiązki związane
     #w sumie mozna ale nie wiem co z tymi trasami moznaby było zrobic
     # a i cos z zapisywaniem danych na dysk trzeba zrobic(i odczytywanie w sumie tez)
     #i jak czyscic ekran konsoli w tym pythonie smierdzacym
+
     print("""1. Zarządzaj lotniskiem
 2. Zarządzaj samolotem
 3. Zarządzaj klientem
