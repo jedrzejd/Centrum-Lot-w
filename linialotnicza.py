@@ -7,6 +7,7 @@ from datetime import datetime
 import pandas as pd
 
 
+
 class Linialotnicza:
 
     def __init__(self, nazwalinii: str, samoloty, loty, trasy, klienci):
