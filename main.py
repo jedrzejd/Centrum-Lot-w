@@ -94,6 +94,7 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
 
 
 
+
     if(wybor=="3"):
         print("""1. Wyświetl listę osób
 2. Dodaj osobę
