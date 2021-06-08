@@ -29,8 +29,8 @@ def test_create_linialotnicza():
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
     lot_2 = Lot(samolot, trasa_3, [rezerwacja_1, rezerwacja_3], 0)
 
-    linialotnicza = Linialotnicza('Lataj z Nami',samolot,lot,trasa_2,klient_1)
-    linialotnicza_2 = Linialotnicza('W chmurach',samolot,lot_2,trasa_1,klient_2)
+    linialotnicza = Linialotnicza('Lataj z Nami',[samolot], [lot], [trasa_2], [klient_1])
+    linialotnicza_2 = Linialotnicza('W chmurach',[samolot],[lot_2],[trasa_1],[klient_2])
 
     assert isinstance(linialotnicza,Linialotnicza)
     assert isinstance(linialotnicza_2,Linialotnicza)
@@ -49,7 +49,7 @@ def test_getNazwaLinii():
     rezerwacja_2 = Rezerwacja(klient_2, [bilet_2_1])
     trasa_2 = Trasa(1233.2, 12, [lotnisko_1, lotnisko_2])
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
-    linialotnicza = Linialotnicza('Lataj z Nami', samolot, lot, trasa_2, klient_1)
+    linialotnicza = Linialotnicza('Lataj z Nami', [samolot], [lot], [trasa_2], [klient_1])
 
     nazwalinii=linialotnicza.getNazwaLinii()
 
@@ -68,7 +68,7 @@ def test_getSamoloty():
     rezerwacja_2 = Rezerwacja(klient_2, [bilet_2_1])
     trasa_2 = Trasa(1233.2, 12, [lotnisko_1, lotnisko_2])
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
-    linialotnicza = Linialotnicza('Lataj z Nami', samolot, lot, trasa_2, klient_1)
+    linialotnicza = Linialotnicza('Lataj z Nami', [samolot], [lot], [trasa_2], [klient_1])
 
     samoloty = linialotnicza.getSamoloty()
 
@@ -87,7 +87,7 @@ def test_getLoty():
     rezerwacja_2 = Rezerwacja(klient_2, [bilet_2_1])
     trasa_2 = Trasa(1233.2, 12, [lotnisko_1, lotnisko_2])
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
-    linialotnicza = Linialotnicza('Lataj z Nami', samolot, lot, trasa_2, klient_1)
+    linialotnicza = Linialotnicza('Lataj z Nami', [samolot], [lot], [trasa_2], [klient_1])
 
     loty = linialotnicza.getLoty()
 
@@ -106,7 +106,7 @@ def test_getTrasy():
     rezerwacja_2 = Rezerwacja(klient_2, [bilet_2_1])
     trasa_2 = Trasa(1233.2, 12, [lotnisko_1, lotnisko_2])
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
-    linialotnicza = Linialotnicza('Lataj z Nami', samolot, lot, trasa_2, klient_1)
+    linialotnicza = Linialotnicza('Lataj z Nami', [samolot], [lot], [trasa_2], [klient_1])
 
     trasy = linialotnicza.getTrasy()
 
@@ -125,7 +125,7 @@ def test_getKlienci():
     rezerwacja_2 = Rezerwacja(klient_2, [bilet_2_1])
     trasa_2 = Trasa(1233.2, 12, [lotnisko_1, lotnisko_2])
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
-    linialotnicza = Linialotnicza('Lataj z Nami', samolot, lot, trasa_2, klient_1)
+    linialotnicza = Linialotnicza('Lataj z Nami', [samolot], [lot], [trasa_2], [klient_1])
 
     klienci = linialotnicza.getKlienci()
 
