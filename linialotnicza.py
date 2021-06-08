@@ -49,7 +49,7 @@ class Linialotnicza:
         self.__trasy.remove(trasa)
 
     def generujLot(self, samolot: Samolot, trasa: Trasa, listaRezerwacji: list, rodzajLotu: str):
-        self.__loty.append(samolot, trasa, listaRezerwacji, rodzajLotu)
+        self.__loty.append(Lot(samolot, trasa, listaRezerwacji, rodzajLotu))
 """
     def zapis(self):
         sam = self.getSamoloty()
