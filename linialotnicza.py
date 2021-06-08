@@ -28,10 +28,10 @@ class Linialotnicza:
     def getKlienci(self):
         return self.__klienci
 
-    def dodajKlienta(self,klient: Klient):
+    def dodajKlienta(self, klient: Klient):
         self.__klient.append(klient)
 
-    def usunKlienta(self,klient: Klient):
+    def usunKlienta(self, klient: Klient):
         self.__klient.pop(klient)
 
     def dodajSamolot(self,samolot: Samolot):
