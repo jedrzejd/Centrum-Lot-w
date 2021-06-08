@@ -4,9 +4,14 @@ from lot import Lot
 from samolot import Samolot
 from datetime import datetime
 
+
 class Linialotnicza:
-    def __init__(self,nazwalinii: str):
+    def __init__(self, nazwalinii: str, samoloty, loty, trasy, klienci):
         self.__nazwalinii = nazwalinii
+        self.__samoloty = samoloty
+        self.__loty = loty
+        self.__trasy = trasy
+        self.__klienci = klienci
 
     def getNazwaLinii(self):
         return self.__nazwalinii
