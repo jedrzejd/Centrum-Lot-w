@@ -50,7 +50,7 @@ class Linialotnicza:
 
     def generujLot(self, samolot: Samolot, trasa: Trasa, listaRezerwacji: list, rodzajLotu: str):
         self.__loty.append(samolot, trasa, listaRezerwacji, rodzajLotu)
-
+"""
     def zapis(self):
         # sam = self.getSamoloty()
         # sam_list = []
@@ -98,4 +98,4 @@ class Linialotnicza:
 
 
 lotnisko = Linialotnicza('Lot', [Samolot(12.3, '12', 34)], [], [], [])
-lotnisko.zapis()
+lotnisko.zapis()"""
