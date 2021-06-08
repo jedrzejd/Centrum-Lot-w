@@ -28,26 +28,26 @@ class Linialotnicza:
     def getKlienci(self):
         return self.__klienci
 
-    def dodajKlienta(self,klient: Klient):
+    def dodajKlienta(self, klient: Klient):
         self.__klienci.append(klient)
 
-    def usunKlienta(self,klient: Klient):
+    def usunKlienta(self, klient: Klient):
         self.__klienci.pop(klient)
 
-    def dodajSamolot(self,samolot: Samolot):
+    def dodajSamolot(self, samolot: Samolot):
         self.__samoloty.append(samolot)
 
-    def usunSamolot(self,samolot: Samolot):
-        self.__samoloty.pop(samolot)
+    def usunSamolot(self, samolot: Samolot):
+        self.__samoloty.remove(samolot)
 
-    def dodajTrase(self,trasa: Trasa):
+    def dodajTrase(self, trasa: Trasa):
         self.__trasy.append(trasa)
 
-    def usunTrase(self,trasa: Trasa):
-        self.__trasy.pop(trasa)
+    def usunTrase(self, trasa: Trasa):
+        self.__trasy.remove(trasa)
 
-    def generujLot(self,samolot:Samolot,trasa: Trasa,listaRezerwacji: list,rodzajLotu: str):
-        self.__loty.append(samolot,trasa,listaRezerwacji,rodzajLotu)
+    def generujLot(self, samolot: Samolot, trasa: Trasa, listaRezerwacji: list, rodzajLotu: str):
+        self.__loty.append(samolot, trasa, listaRezerwacji, rodzajLotu)
 
     def zapis(self):
         pass
