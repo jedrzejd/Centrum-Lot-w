@@ -88,13 +88,10 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
             print('Samolotow jest: ',licznik)
 
         if (samolotowywybor == "3"):
-            print('Podaj zasieg samolotu: ')
-            zasieg = input()
-            print('Podaj ID samolotu: ')
-            id = input()
-            print('Podaj liczbę miejsc w samolocie: ')
-            liczbamiejsc = input()
-
+            zasieg = input('Podaj zasieg samolotu: ')
+            id = input('Podaj ID samolotu: ')
+            liczbamiejsc = input('Podaj liczbę miejsc w samolocie: ')
+            linialotnicza.dodajSamolot(Samolot(zasieg,id,liczbamiejsc))
 
         if (samolotowywybor == "4"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
             zasieg = input("Podaj zasieg samolotu")
