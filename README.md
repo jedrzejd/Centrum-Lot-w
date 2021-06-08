@@ -1,9 +1,5 @@
 # Centrum-Lotow
 
-## Ogólne informacje
-
-Tutaj będzie opis naszego rozwiazania:
-
 ## Treść zadania
 
 System rezerwacji biletów pewnej firmy lotniczej przyjmuje żądania rezerwacji od klientów indywidualnych i firm-pośredników. 
@@ -17,10 +13,3 @@ Minimalny zakres funkcjonalności:
 - mechanizm generowania lotów (dobór samolotu w zależności od odległości, uwzględnienie czasu podróży oraz powrotu, powielanie lotów na wiele dni - codziennych, cotygodniowych) na podstawie trasy
 - funkcjonalność rezerwacji biletów
 - zapis i odczyt stanu systemu na dysk
-
-## Dokumentacja
-Sample text
-piekny mamy dzien 
-
-## Uruchomianie
-Sample text
