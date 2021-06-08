@@ -29,8 +29,8 @@ def test_create_linialotnicza():
     lot = Lot(samolot, trasa_2, [rezerwacja_1, rezerwacja_2], 0)
     lot_2 = Lot(samolot, trasa_3, [rezerwacja_1, rezerwacja_3], 0)
 
-    linialotnicza = Linialotnicza('Lataj z Nami',samolot,lot,trasa_2,klient_1)
-    linialotnicza_2 = Linialotnicza('W chmurach',samolot,lot_2,trasa_1,klient_2)
+    linialotnicza = Linialotnicza('Lataj z Nami',[samolot],lot,trasa_2,klient_1)
+    linialotnicza_2 = Linialotnicza('W chmurach',[samolot],lot_2,trasa_1,klient_2)
 
     assert isinstance(linialotnicza,Linialotnicza)
     assert isinstance(linialotnicza_2,Linialotnicza)

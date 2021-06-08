@@ -52,41 +52,41 @@ class Linialotnicza:
         self.__loty.append(samolot, trasa, listaRezerwacji, rodzajLotu)
 
     def zapis(self):
-        sam = self.getSamoloty()
-        sam_list = []
-        for x in sam:
-            sam_id = x.getId()
-            sam_Zasieg = x.getZasieg()
-            sam_Liczbamiejsc = x.getLiczbamiejsc()
-            sam_list.append([sam_id, sam_Zasieg, sam_Liczbamiejsc])
-        csv_samoloty = pd.DataFrame(sam_list)
-        csv_samoloty.to_csv('data/plik_samoloty.csv', index=False)
-
-
-        # loty = self.getLoty()
-        # loty_list = []
-        # for x in loty:
-        #     loty_id_Samolot = x.getSamolot().getId()
-        #     loty_rezerwacje = x.getRezerwacje()
-        #     loty_id_trasy = x.getTrasa().getId()
-        #     loty_rodzaj = x.getRodzajLotu()
-        #     loty_list.append([loty_id_Samolot, loty_rezerwacje, loty_id_trasy, loty_rodzaj])
-        # csv_loty = pd.DataFrame(loty_list)
-        # print(csv_loty)
-        # csv_loty.to_csv('data/plik_loty.csv', index=False)
-
-        trasy = self.getSamoloty()
-        trasy_list = []
-        for x in sam:
-            sam_id = x.getId()
-            sam_Zasieg = x.getZasieg()
-            sam_Liczbamiejsc = x.getLiczbamiejsc()
-            sam_list.append([sam_id, sam_Zasieg, sam_Liczbamiejsc])
-        csv_trasy = pd.DataFrame(sam_list)
-        csv_trasy.to_csv('data/plik_trasy.csv', index=False)
-
-        __plik_trasy = 'data/plik_trasy.csv'
-        __plik_klienci = 'data/plik_klienci.csv'
+        # sam = self.getSamoloty()
+        # sam_list = []
+        # for x in sam:
+        #     sam_id = x.getId()
+        #     sam_Zasieg = x.getZasieg()
+        #     sam_Liczbamiejsc = x.getLiczbamiejsc()
+        #     sam_list.append([sam_id, sam_Zasieg, sam_Liczbamiejsc])
+        # csv_samoloty = pd.DataFrame(sam_list)
+        # csv_samoloty.to_csv('data/plik_samoloty.csv', index=False)
+        #
+        #
+        # # loty = self.getLoty()
+        # # loty_list = []
+        # # for x in loty:
+        # #     loty_id_Samolot = x.getSamolot().getId()
+        # #     loty_rezerwacje = x.getRezerwacje()
+        # #     loty_id_trasy = x.getTrasa().getId()
+        # #     loty_rodzaj = x.getRodzajLotu()
+        # #     loty_list.append([loty_id_Samolot, loty_rezerwacje, loty_id_trasy, loty_rodzaj])
+        # # csv_loty = pd.DataFrame(loty_list)
+        # # print(csv_loty)
+        # # csv_loty.to_csv('data/plik_loty.csv', index=False)
+        #
+        # trasy = self.getSamoloty()
+        # trasy_list = []
+        # for x in sam:
+        #     sam_id = x.getId()
+        #     sam_Zasieg = x.getZasieg()
+        #     sam_Liczbamiejsc = x.getLiczbamiejsc()
+        #     sam_list.append([sam_id, sam_Zasieg, sam_Liczbamiejsc])
+        # csv_trasy = pd.DataFrame(sam_list)
+        # csv_trasy.to_csv('data/plik_trasy.csv', index=False)
+        #
+        # __plik_trasy = 'data/plik_trasy.csv'
+        # __plik_klienci = 'data/plik_klienci.csv'
 
 
     def odczyt(self):
