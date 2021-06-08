@@ -4,6 +4,8 @@ from linialotnicza import Linialotnicza
 
 
 #tu bedzie trzeba importowac wszysko
+from samolot import Samolot
+
 linialotnicza = Linialotnicza('', [], [], [], [])
 linialotnicza.odczyt()
 
@@ -95,8 +97,10 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
 
 
         if (samolotowywybor == "4"):#trzeba wybrac samolot i go usunac(wczytanie i usuniecie)
-
-            linialotnicza.usunSamolot()
+            zasieg = input("Podaj zasieg samolotu")
+            id = input("Podaj id samolotu")
+            liczbamiejsc = input("Podaj liczbe miejsc samolotu")
+            linialotnicza.usunSamolot(Samolot(zasieg, id, liczbamiejsc))
 
 
     if(wybor=="3"):
