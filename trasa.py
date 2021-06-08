@@ -2,10 +2,11 @@ from lotnisko import Lotnisko
 
 
 class Trasa:
-    def __init__(self, dystans: float, czas: float, lotniska: list):
+    def __init__(self, dystans: float, czas: float, lotniska: list, id: str):
         self.__dystans = dystans
         self.__czas = czas
         self.__lotniska = lotniska
+        self.__id = id
 
     def getDystans(self):
         return self.__dystans
@@ -21,3 +22,6 @@ class Trasa:
 
     def getCzas(self):
         return self.__czas
+
+    def getID(self):
+        return self.__id

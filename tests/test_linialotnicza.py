@@ -176,3 +176,12 @@ def test_usunKlienta():
     assert len(klienci) == 1
     assert ostatniklient == 'jd_123'
 
+
+# from linialotnicza import Linialotnicza
+#
+# def test_create_linialotnicza():
+#     linialotnicza = Linialotnicza('Lot')
+#
+#     assert isinstance(linialotnicza,Linialotnicza)
+#
+# def
