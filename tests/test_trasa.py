@@ -5,14 +5,14 @@ from trasa import Trasa, Lotnisko
 
 def test_create_trasa():
     lotnisko = Lotnisko('Japonia', 'Baku', 'FSFJU123')
-    trasa = Trasa(123.98, 12.5, [lotnisko])
+    trasa = Trasa(123.98, 12.5, [lotnisko], '1')
 
     assert isinstance(trasa, Trasa)
 
 
 def test_getDystans_trasy():
     lotnisko = Lotnisko('Japonia', 'Baku', 'FSFJU123')
-    trasa = Trasa(123.98, 12.5, [lotnisko])
+    trasa = Trasa(123.98, 12.5, [lotnisko], '1')
 
     dystans_trasy = trasa.getDystans()
 
@@ -21,10 +21,21 @@ def test_getDystans_trasy():
     assert dystans_trasy == 123.98
 
 
+def test_getId_trasy():
+    lotnisko = Lotnisko('Japonia', 'Baku', 'FSFJU123')
+    trasa = Trasa(123.98, 12.5, [lotnisko], '1')
+
+    id_trasa = trasa.getID()
+
+    assert isinstance(trasa, Trasa)
+    assert isinstance(id_trasa, str)
+    assert id_trasa == '1'
+
+
 def test_getLotniska_trasy():
     lotnisko_1 = Lotnisko('Japonia', 'Baku', 'FSFJU123')
     lotnisko_2 = Lotnisko('Polska', 'Bialystok', 'ASBV4411')
-    trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2])
+    trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2], '1')
 
     lotniska = trasa.getLotniska()
 
@@ -43,7 +54,7 @@ def test_getLotniska_trasy():
 def test_dodajLotnisko_trasy():
     lotnisko_1 = Lotnisko('Japonia', 'Baku', 'FSFJU123')
     lotnisko_2 = Lotnisko('Polska', 'Bialystok', 'ASBV4411')
-    trasa = Trasa(123.98, 12.5, [lotnisko_1])
+    trasa = Trasa(123.98, 12.5, [lotnisko_1], '1')
 
     trasa.dodajLotnisko(lotnisko_2)
     lotniska = trasa.getLotniska()
@@ -63,7 +74,7 @@ def test_dodajLotnisko_trasy():
 def test_usunLotnisko_trasy():
     lotnisko_1 = Lotnisko('Japonia', 'Baku', 'FSFJU123')
     lotnisko_2 = Lotnisko('Polska', 'Bialystok', 'ASBV4411')
-    trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2])
+    trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2], '1')
 
     trasa.usunLotnisko()
     lotniska = trasa.getLotniska()
@@ -77,7 +88,7 @@ def test_usunLotnisko_trasy():
 
 def test_getCzas_trasy():
     lotnisko_1 = Lotnisko('Japonia', 'Baku', 'FSFJU123')
-    trasa = Trasa(123.98, 12.5, [lotnisko_1])
+    trasa = Trasa(123.98, 12.5, [lotnisko_1], '1')
 
     czas_lotniska = trasa.getCzas()
 
