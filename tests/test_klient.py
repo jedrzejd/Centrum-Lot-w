@@ -7,7 +7,7 @@ def test_create_klient():
     assert isinstance(klient, Klient)
 
 
-def test_getID_klineta():
+def test_getID_klienta():
     klient = Klient('123')
     id_klient = klient.getId()
 
