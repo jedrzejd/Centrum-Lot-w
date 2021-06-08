@@ -118,18 +118,3 @@ class Linialotnicza:
         self.__samoloty = sam_list_1
 
 
-
-# klient = Klient('123')
-# lotnisko_1 = Lotnisko('Japonia', 'Baku', 'FSFJU123')
-# lotnisko_2 = Lotnisko('Polska', 'Bialystok', 'ASBV4411')
-# trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2], '1')
-# linialotnicza = Linialotnicza('Lot', [Samolot(12.3, '12', 34)], [], [trasa], [klient])
-
-linialotnicza = Linialotnicza('', [], [], [], [])
-
-# linialotnicza.zapis()
-linialotnicza.odczyt()
-print(linialotnicza.getNazwaLinii())
-print(linialotnicza.getSamoloty()[0].getId())
-print(linialotnicza.getTrasy()[0].getDystans())
-print(linialotnicza.getKlienci()[0].getId())
