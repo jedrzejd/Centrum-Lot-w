@@ -50,9 +50,14 @@ class Linialotnicza:
         self.__trasy.remove(trasa)
 
     def generujLot(self, samolot: Samolot, trasa: Trasa, listaRezerwacji: list, rodzajLotu: str):
-        self.__loty.append(samolot, trasa, listaRezerwacji, rodzajLotu)
+        self.__loty.append(Lot(samolot, trasa, listaRezerwacji, rodzajLotu))
 
     def zapis(self):
+
+        nazwa_linni = self.__nazwalinii
+        with open('data/plik_nazwa_linni.csv', 'w') as file:
+            file.write(nazwa_linni)
+
         sam = self.getSamoloty()
         sam_list = []
         for x in sam:
@@ -62,19 +67,6 @@ class Linialotnicza:
             sam_list.append([sam_Zasieg, sam_id, sam_liczbamiejsc])
         csv_samoloty = pd.DataFrame(sam_list)
         csv_samoloty.to_csv('data/plik_samoloty.csv', index=False)
-        #
-        #
-        # # loty = self.getLoty()
-        # # loty_list = []
-        # # for x in loty:
-        # #     loty_id_Samolot = x.getSamolot().getId()
-        # #     loty_rezerwacje = x.getRezerwacje()
-        # #     loty_id_trasy = x.getTrasa().getId()
-        # #     loty_rodzaj = x.getRodzajLotu()
-        # #     loty_list.append([loty_id_Samolot, loty_rezerwacje, loty_id_trasy, loty_rodzaj])
-        # # csv_loty = pd.DataFrame(loty_list)
-        # # print(csv_loty)
-        # # csv_loty.to_csv('data/plik_loty.csv', index=False)
 
         trasy = self.getTrasy()
         trasy_list = []
@@ -97,12 +89,34 @@ class Linialotnicza:
         csv_klienci.to_csv('data/plik_klienci.csv', index=False)
 
     def odczyt(self):
+        with open('data/plik_nazwa_linni.csv', 'r') as file:
+            nazwa_linni = file.read()
+
         csv_samoloty = pd.read_csv('data/plik_samoloty.csv')
+        sam_list_1 = []
         for i, x in csv_samoloty.iterrows():
-            self.__
-            print(x[0], x[1], x[2])
+            sam_list_1.append(Samolot(x[0], x[1], x[2]))
+
         csv_trasy = pd.read_csv('data/plik_trasy.csv')
+        trasy_list = []
+        for i, x in csv_trasy.iterrows():
+            samoloty = eval(x[2])
+            sam_list = []
+            for sam in samoloty:
+                sam_list.append(Lotnisko(sam[0], sam[1], sam[2]))
+
+            trasy_list.append(Trasa(x[0], x[1], sam_list, x[3]))
+
         csv_klienci = pd.read_csv('data/plik_klienci.csv')
+        klienci__list = []
+        for i, x in csv_klienci.iterrows():
+            klienci__list.append(Klient(x[0]))
+
+        self.__nazwalinii = nazwa_linni
+        self.__trasy = trasy_list
+        self.__klienci = klienci__list
+        self.__samoloty = sam_list_1
+
 
 
 # klient = Klient('123')
@@ -110,6 +124,12 @@ class Linialotnicza:
 # lotnisko_2 = Lotnisko('Polska', 'Bialystok', 'ASBV4411')
 # trasa = Trasa(123.98, 12.5, [lotnisko_1, lotnisko_2], '1')
 # linialotnicza = Linialotnicza('Lot', [Samolot(12.3, '12', 34)], [], [trasa], [klient])
-#
-# # linialotnicza.zapis()
-# linialotnicza.odczyt()
+
+linialotnicza = Linialotnicza('', [], [], [], [])
+
+# linialotnicza.zapis()
+linialotnicza.odczyt()
+print(linialotnicza.getNazwaLinii())
+print(linialotnicza.getSamoloty()[0].getId())
+print(linialotnicza.getTrasy()[0].getDystans())
+print(linialotnicza.getKlienci()[0].getId())
