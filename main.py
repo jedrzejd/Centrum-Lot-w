@@ -97,6 +97,7 @@ Aby dokonać wyboru naciśnij odpowiedni klawisz: """)
             linialotnicza.usunSamolot(Samolot(zasieg, id, liczbamiejsc))
 
 
+
     if(wybor=="3"):
         print("""1. Wyświetl listę osób
 2. Dodaj osobę
