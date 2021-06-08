@@ -34,7 +34,7 @@ class Linialotnicza:
         self.__klienci.append(klient)
 
     def usunKlienta(self, klient: Klient):
-        self.__klienci.pop(klient)
+        self.__klienci.remove(klient)
 
     def dodajSamolot(self, samolot: Samolot):
         self.__samoloty.append(samolot)
